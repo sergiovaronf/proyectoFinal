@@ -1,0 +1,18 @@
+<ion-content>
+  <div>
+    <h2>CUIDADOS</h2>
+  </div> 
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let slide of slides">    
+      <div>
+        <img [src]="slide.img">
+      </div>
+      <div>
+        <h3>{{slide.descripcion}}</h3>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <ion-button fill="clear" routerLink="/inicio" >Cotinuar<ion-icon slot="end"
+    name="arrow-forward"></ion-icon>
+</ion-button>
+</ion-content>

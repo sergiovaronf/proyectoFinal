@@ -1,0 +1,13 @@
+[
+    {
+        "apellido": "Varon",
+        "contraseña": "123",
+        "correo": "sergio@sergio.com",
+        "direccion": "cra 4",
+        "estado": true,
+        "id": 1,
+        "nombre": "Sergio",
+        "telefono": 87564,
+        "tipoUsuario": 1
+    }
+]

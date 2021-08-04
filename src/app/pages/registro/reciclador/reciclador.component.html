@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="home" [routerLink]="['/login']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <form [formGroup]="form" #frmReciclador="ngForm" (ngSubmit)="guardar()">
+    <div class="center">
+      <div heading-column-lr>
+        <h1 big-heading>Ingresar tus Datos</h1>
+      </div>
+      <ion-item transparent>
+        <ion-icon icon-small name="person-outline"></ion-icon>
+        <ion-input placeholder="Nombre" type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+        <ion-icon icon-small name="person-outline"></ion-icon>
+        <ion-input placeholder="Apellido" type="text" formControlName="apellido"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+        <ion-icon icon-small name="mail-outline"></ion-icon>
+        <ion-input placeholder="Correo" type="mail" formControlName="correo"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+        <ion-icon icon-small name="finger-print-outline"></ion-icon>
+        <ion-input placeholder="Documento" type="text" formControlName="documento"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+        <ion-icon icon-small name="call-outline"></ion-icon>
+        <ion-input placeholder="telefono" type="number" formControlName="telefono"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+        <ion-icon icon-small name="eye-outline"></ion-icon>
+        <ion-input placeholder="Contraseña" type="password" formControlName="contraseña"></ion-input>
+      </ion-item>
+      <div linespace></div>
+      <ion-button color="tertiary" class="ion-button-class" shape="round" fill="solid" size="large"
+      expand="block" type="submit">Continuar</ion-button>
+    </div>
+  </form>  
+</ion-content>
