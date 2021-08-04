@@ -4,7 +4,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #33b6b0;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -74,6 +74,9 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --theme-color: #b5eee6;
+  --theme-black: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,7 +93,7 @@
     --ion-color-primary-shade: #3a7be0;
     --ion-color-primary-tint: #5598ff;
 
-    --ion-color-secondary: #50c8ff;
+    --ion-color-secondary: #2d84ac;
     --ion-color-secondary-rgb: 80,200,255;
     --ion-color-secondary-contrast: #ffffff;
     --ion-color-secondary-contrast-rgb: 255,255,255;
@@ -228,5 +231,88 @@
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
+
+  }
+
+
+
+}
+
+
+@font-face{
+  font-family: 'Heebo-Black';
+  src: url('../assets/Heebo/Heebo-Black.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-Bold';
+  src: url('../assets/Heebo/Heebo-Bold.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-ExtraBold';
+  src: url('../assets/Heebo/Heebo-ExtraBold.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-ExtraLight';
+  src: url('../assets/Heebo/Heebo-ExtraLight.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-Light';
+  src: url('../assets/Heebo/Heebo-Light.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-Medium';
+  src: url('../assets/Heebo/Heebo-Medium.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-Regular';
+  src: url('../assets/Heebo/Heebo-Regular.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-SemiBold';
+  src: url('../assets/Heebo/Heebo-SemiBold.ttf');
+}
+
+@font-face{
+  font-family: 'Heebo-SemiBold';
+  src: url('../assets/Heebo/Heebo-SemiBold.ttf');
+}
+
+@media(min-height:320px){
+  .center{
+    position: absolute;
+    left : 50%;
+    top: 45%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+} 
+
+@media(min-height:735px){
+  .center{
+    position: absolute;
+    left : 50%;
+    top: 45%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+}
+
+@media(min-height:812px){
+  .center{
+    position: absolute;
+    left : 50%;
+    top: 45%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
   }
 }

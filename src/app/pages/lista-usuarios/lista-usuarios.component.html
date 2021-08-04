@@ -1,0 +1,41 @@
+<ion-app id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Usuarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let lista of listaUsuario" [routerLink]= "['/usuario/ver/',lista.id_rol, lista.id]">
+        <ion-avatar slot="start">
+          <img src="https://www.uic.mx/posgrados/files/2018/05/default-user.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{lista.email}}</h2>
+          <div *ngIf="lista.id_rol==2">
+            <h3>Tienda</h3>
+          </div>
+          <div *ngIf="lista.id_rol==3">
+            <h3>Reciclador</h3>
+          </div>
+          <div *ngIf="lista.id_rol==4">
+            <h3>Residente</h3>
+          </div>
+        </ion-label>
+        <ion-note slot="end" >
+          <ion-label *ngIf="lista.estado==true" color="success">
+            <h3>Activo</h3>
+          </ion-label>
+          <ion-label *ngIf="lista.estado==false" color="danger">
+            <h3>Inactivo</h3>
+          </ion-label>
+        </ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <router-outlet></router-outlet>
+</ion-app>

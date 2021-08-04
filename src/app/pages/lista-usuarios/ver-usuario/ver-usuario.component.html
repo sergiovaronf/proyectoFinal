@@ -1,0 +1,160 @@
+<ion-app id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home" [routerLink]="['/usuario']"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div>
+      <ion-item lines="none" class="fondo">
+        <ion-label>
+          <h1>Datos</h1>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" color="fondo">
+        <ion-label>
+          <h2>Datos de Cuenta</h2>
+        </ion-label>
+      </ion-item>
+      <ion-card>
+        <ion-item>
+          <ion-label>
+            <h2>E-mail</h2>
+            <ion-label color="medium">
+              <h2>{{user.email}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h2>Tipo de Usuario</h2>
+            <ion-label color="medium">
+              <h2 *ngIf="user.id_rol==2">Tienda</h2>
+              <h2 *ngIf="user.id_rol==3">Reciclador</h2>
+              <h2 *ngIf="user.id_rol==4">Residente</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item checked lines="full">
+          <ion-label>
+            <h2>Estado</h2>
+            <ion-label color="success">
+              <h2 *ngIf="user.estado==true">Activo</h2>
+            </ion-label>
+            <ion-label color="danger">
+              <h2 *ngIf="user.estado==false">Inactivo</h2>
+            </ion-label>
+          </ion-label>
+          <ion-toggle [(ngModel)]="user.estado" color="success" (ionChange)="cambiarEstado()"></ion-toggle>
+        </ion-item>
+      </ion-card>
+      <ion-item lines="none" color="fondo">
+        <ion-label>
+          <h2>Datos de Cuenta</h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-card *ngIf="user.id_rol==2">
+        <ion-item>
+          <ion-label>
+            <h2>Nombre</h2>
+            <ion-label color="medium">
+              <h2>{{tienda.nombre}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h2>Documento</h2>
+            <ion-label color="medium">
+              <h2 *ngIf="tienda.idTipoDocumento==1">{{"C.C. "+ tienda.documento}}</h2>
+              <h2 *ngIf="tienda.idTipoDocumento==2">{{"NIT. "+ tienda.documento}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label>
+            <h2>Teléfono</h2>
+            <ion-label color="medium">
+              <h2>{{tienda.telefono}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+      <ion-card *ngIf="user.id_rol==3">
+        <ion-item>
+          <ion-label>
+            <h2>Nombre y Apellido</h2>
+            <ion-label color="medium">
+              <h2>{{reciclador.nombre + " " + reciclador.apellido}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h2>Documento</h2>
+            <ion-label color="medium">
+              <h2>{{"C.C. "+ reciclador.documento}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label>
+            <h2>Teléfono</h2>
+            <ion-label color="medium">
+              <h2>{{reciclador.telefono}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+      <ion-card *ngIf="user.id_rol==4">
+        <ion-item>
+          <ion-label>
+            <h2>Nombre y Apellido</h2>
+            <ion-label color="medium">
+              <h2>{{residente.nombre + " " + residente?.apellido}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label>
+            <h2>Teléfono</h2>
+            <ion-label color="medium">
+              <h2>{{residente.telefono}}</h2>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+      <div *ngIf="user.id_rol==4 || user.id_rol==2">
+        <ion-item lines="none" color="lightgray">
+          <ion-label>
+            <h2>Domicilios</h2>
+          </ion-label>
+        </ion-item>
+        <ion-card>
+          <ion-list *ngIf="listaDireccion?.length!==null">
+            <ion-item *ngFor="let lista of listaDireccion" lines="full" detail>
+              <ion-label>
+                <h2>{{lista.via + " #" + lista.numero1 + "-" + lista.numero2}}</h2>
+                <h6>{{lista.descripcion}}</h6>
+                <h6>{{"Facatativa, " + lista.barrio}}</h6>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-item detail >
+            <ion-label color="tertiary">
+              <h2>Agregar domicilio</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-app>

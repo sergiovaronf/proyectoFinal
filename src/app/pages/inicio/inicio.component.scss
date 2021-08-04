@@ -1,0 +1,21 @@
+ion-toolbar{
+    --background: #5cccbd;
+    color: white;
+}
+
+img{
+    max-height: 80%;
+    max-width: 80%;
+    padding: 5%;
+}
+
+ion-content{
+    text-align: center;
+    display: block;
+}
+
+h1{
+    font-size: 5ex;
+    font-family: "Heebo-Bold";
+    color: #5cccbd;
+}

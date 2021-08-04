@@ -1,0 +1,7 @@
+{
+    "/rest/*":{
+        "target": "http://localhost:8080/ServicioWebBasico",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
